@@ -1,0 +1,83 @@
+\section{Manipulação da pilha}
+
+\begin{frame}[fragile]{Palavras para a manipulação da pilha}
+
+    \begin{itemize}
+        \item Além da palavra \code{forth}{.}, que extrai o topo da pilha, Forth disponibiliza
+            outras palavras para a manipulação da pilha
+
+        \item A palavra \code{forth}{SWAP ( a b -- b a )} inverte a ordem do topo com o segundo
+            elemento da pilha:
+
+            \inputcode{forth}{codes/swap.fs}
+            \vspace{0.1in}
+
+        \item A palavra \code{forth}{DUP ( a -- a a )} duplica o elemento do topo da pilha:
+
+            \inputcode{forth}{codes/dup.fs}
+
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Palavras para a manipulação da pilha}
+
+    \begin{itemize}
+        \item A palavra \code{forth}{OVER ( a b -- a b a )} insere uma copia o segundo elemento na pilha:
+
+            \inputcode{forth}{codes/over.fs}
+            \vspace{0.1in}
+
+        \item A palavra \code{forth}{ROT ( a b c -- b c a )} rotaciona o terceiro elemento, de modo que
+            ele passa a ocupar o topo da pilha:
+
+            \inputcode{forth}{codes/rot.fs}
+            \vspace{0.1in}
+
+        \item A palavra \code{forth}{DROP ( a -- )} remove o topo da pilha, sem imprimí-lo na saída
+            padrão
+
+            \inputcode{forth}{codes/drop.fs}
+
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Sumário}
+
+    \begin{scriptsize}
+    \begin{table}
+        \centering
+        \begin{tabularx}{0.95\textwidth}{ccX}
+            \toprule
+            \textbf{Palavra} & \textbf{Notação de pilha} & \textbf{Significado} \\
+            \midrule
+            \code{forth}{SWAP} & \code{forth}{( n1 n2 -- n2 n1 )} & Troca os dois elementos do topo da pilha de posição \\
+            \midrule
+            \code{forth}{DUP} & \code{forth}{( n -- n n )} & Duplica o elemento do topo da pilha \\
+            \midrule
+            \code{forth}{OVER} & \code{forth}{( n1 n2 -- n1 n2 n1 )} & Insere uma cópia do segundo elemento na pilha \\
+            \midrule
+            \code{forth}{ROT} & \code{forth}{( n1 n2 n3 -- n3 n1 n2 )} & Rotaciona os três primeiros elementos da pilha \\
+            \midrule
+            \code{forth}{DROP} & \code{forth}{( -- )} & Remove o topo da pilha, sem imprimí-lo \\
+            \midrule
+            \code{forth}{2SWAP} & \code{forth}{( d1 d2 -- d2 d1 )} & Troca os dois primeiros pares de elementos de posição \\
+            \midrule
+            \code{forth}{2DUP} & \code{forth}{( d d -- d )} & Duplica o primeiro par de elementos \\
+            \midrule
+            \code{forth}{2OVER} & \code{forth}{( d1 d2 -- d1 d2 d1 )} & Duplica o segundo par de números \\
+            \midrule
+            \code{forth}{2DROP} & \code{forth}{( d1 d2 -- d1 )} & Remove o primeiro par de números \\
+            \midrule
+            \code{forth}{CLEARSTACK} & \code{forth}{( -- )} & Esvazia a pilha \\
+            \midrule
+            \code{forth}{PAGE} & \code{forth}{( -- )} & Limpa o terminal \\
+            \bottomrule
+        \end{tabularx}
+    \end{table}
+    \end{scriptsize}
+
+\end{frame}
+
+
